@@ -5,3 +5,33 @@ form label{
 h1{
     font-size: 2rem;
 }
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.8;
+    z-index: 99;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.95;
+    z-index: 99;
+}
+
+.preloader i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+

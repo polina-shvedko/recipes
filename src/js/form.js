@@ -2,6 +2,36 @@ let formErrors = [];
 const WEIBLICH_GESCHLECHT = 'weiblich';
 const MAENLICH_GESCHLECHT = 'maennlich';
 
+if (formElement) {
+    formElement.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        let formValid = validateForm(formElement);
+        let formData = prepareFormData(event.target.elements);
+        let kalories = 0;
+
+        if (formValid) {
+            kalories = calculateCalories(formData);
+        }
+
+        let ergebnissKalorien = document.querySelector('.modal-body') || null;
+
+        if (ergebnissKalorien !== null) {
+            if (kalories < 1200) {
+                ergebnissKalorien.innerHTML = 'Sie sollen mindestens 1200 Kalorien pro Tag essen! Aber villeicht haben Sie etwas falsch eingegeben.'
+            } else {
+                ergebnissKalorien.innerHTML = 'Sie sollen maximal ' + kalories + ' Kalorien pro Tag essen!'
+            }
+
+            openModal();
+            showLightbox();
+
+        }
+
+        return false;
+    });
+}
+
 /**
  * Form validation method
  * @param form - form javascript object
