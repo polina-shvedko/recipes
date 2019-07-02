@@ -40,7 +40,7 @@
 <body>
 <div class="container mt-5 mb-5">
     <h1 class="shadow p-3 rounded text-center">Anwendung für die Menschen, die sich selbst fit halten müssen/wollen!</h1>
-<form class="shadow p-3 mb-5 bg-white rounded">
+<form class="shadow p-3 mb-5 bg-white rounded" novalidate id="form">
     <div class="form-row">
         <div class="form-group col-6">
             <label for="vorname">Vorname</label> <input type="text" class="form-control" id="vorname" name="vorname" placeholder="Vorname">
@@ -62,7 +62,7 @@
             <label for="alter">Alter</label> <input type="text" class="form-control" id="alter" name="alter" placeholder="Alter">
         </div>
         <div class="form-group col-6">
-            <label for="geschlecht">Geschlecht</label> <select class="form-control" id="geschlecht" name="grossegeschlecht">
+            <label for="geschlecht">Geschlecht</label> <select class="form-control" id="geschlecht" name="geschlecht">
             <option value="weiblich">Weiblich</option>
             <option value="maennlich">Männlich</option>
         </select>
@@ -117,6 +117,10 @@
         </div>
     </div>
 </form>
+<div class="row">
+    <div class="col" id="ergebniss-kalorien">
+    </div>
+</div>
 </div>
 <script src="js/script.min.js" type="application/javascript"></script>
 <div class="lightbox" style="display: none;"></div>
