@@ -77,12 +77,7 @@ gulp.task('js', function () {
 //html generation from mustache
 gulp.task('html', function () {
     return gulp.src(["src/templates/**/*.html", "src/templates/**/*.mustache"])
-        .pipe(data(function() {
-            return require('./app/data.json')
-        }))
-        .pipe(mustache({
-            msg: "Hello Gulp!"
-        }))
+        .pipe(mustache('data.json',{},{}))
         .pipe(gulp.dest("app"))
         .pipe(livereload());
 });
