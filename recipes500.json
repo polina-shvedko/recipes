@@ -1,0 +1,161 @@
+{
+  "dishes": [
+    {
+      "name": "Gefüllte Tomaten mit Hack und Käse überbacken",
+      "calories": 490,
+      "weight": 120,
+      "relative calories": 408,
+      "process": "<dl class=\"list list--preparation\">\n    <dt>1.</dt>\n    <dd>\n        Zwiebel und Knoblauch schälen. Zwiebel in feine Würfel schneiden. Knoblauch durch eine Knoblauchpresse drücken. Öl erhitzen, Zwiebel und Hack darin unter Wenden ca. 3 Minuten bei starker Hitze anbraten. Knoblauch hinzufügen. Mit Salz, Pfeffer, Paprika und Oregano würzen. Weitere 5 Minuten braten. Tomaten putzen, waschen, eine Deckel abschneiden und die Tomaten aushöhlen. In eine ofenfeste Form setzen. 1/2 Liter Wasser aufkochen, Gemüsebrühe, Tomateninneres und Tomatenmark einrühren. Tomaten mit Hack füllen und Brühe zugießen. Käse über die gefüllten Tomaten reiben. Im vorgeheizten Backofen (E-Herd 200 ° C/ Gas: Stufe 3) ca. 20 Minuten backen. Nach Belieben mit etwas Petersilie garniert\n        <span class=\"vm-hook-outer vm-hook-default\"><span class=\"vm-hook\" style=\"color: rgb(0, 153, 0); border-color: transparent transparent rgb(0, 153, 0); cursor: pointer;\">servieren</span><span class=\"vm-hook-icon\" style=\"display: inline-block;\"></span></span></dd>\n</dl>",
+      "photoId": 4,
+      "time": 50,
+      "indredients": [
+        {
+          "name": "Zwiebel",
+          "quantity": 0.5,
+          "measure": "Stück"
+        },
+        {
+          "name": "Knoblauchzehe",
+          "quantity": 0.25,
+          "measure": "Stück"
+        },
+        {
+          "name": "Sonnenblumenöl",
+          "quantity": 0.5,
+          "measure": "EL"
+        },
+        {
+          "name": "gemischtes Hackfleisch",
+          "quantity": 125,
+          "measure": "g"
+        },
+        {
+          "name": "Salz",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Pfeffer",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Edelsüß-Paprika",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Oregano",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "etwas glatte Petersilie",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Tomaten",
+          "quantity": 130,
+          "measure": "g"
+        },
+        {
+          "name": "Gemüsebrühe",
+          "quantity": 0.25,
+          "measure": "TL"
+        },
+        {
+          "name": "Tomatenmark",
+          "quantity": 0.25,
+          "measure": "EL"
+        },
+        {
+          "name": "mittelalter Gouda",
+          "quantity": 25,
+          "measure": "g"
+        }
+      ]
+    },
+    {
+      "name": "Spaghetti mit Tomatensoße",
+      "calories": 500,
+      "weight": 415,
+      "relative calories": 120,
+      "process": "<dl class=\"list list--preparation\">\n    <dt>1.</dt>\n    <dd>\n        Zwiebel schälen und fein würfeln. Öl in einem Topf erhitzen, Zwiebel darin glasig dünsten, Lorbeer und Oregano zufügen, kurz mit andünsten. Tomatenmark unterrühren, kurz anschwitzen. Mit Salz, Pfeffer und Paprika würzen.\n    </dd>\n    <dt>2.</dt>\n    <dd>\n        Mit Tomaten und Brühe ablöschen. Tomaten im Topf etwas zerdrücken, aufkochen und bei mittlerer Hitze ca. 15 Minuten köcheln lassen. Anschließend nochmals mit Salz, Pfeffer, Paprika und Zucker abschmecken.\n    </dd>\n    <dt>3.</dt>\n    <dd>\n        Inzwischen Nudeln in kochendem Salzwasser nach Packungsanweisung zubereiten. In ein Sieb gießen, kurz abschrecken und abtropfen lassen. Nudeln und Soße auf Tellern mit Oregano garniert und Parmesan bestreut <span class=\"vm-hook-outer vm-hook-default\"><span class=\"vm-hook\" style=\"color: rgb(0, 153, 0); border-color: transparent transparent rgb(0, 153, 0); cursor: pointer;\">anrichten</span><span class=\"vm-hook-icon\" style=\"display: inline-block;\"></span></span>.\n    </dd>\n</dl>\n",
+      "photoId": 5,
+      "time": 50,
+      "indredients": [
+        {
+          "name": "Zwiebel",
+          "quantity": 0.25,
+          "measure": "Stück"
+        },
+        {
+          "name": "Olivenöl ",
+          "quantity": 0.75,
+          "measure": "EL"
+        },
+        {
+          "name": "Lorbeerblätter",
+          "quantity": 0.5,
+          "measure": "Stück"
+        },
+        {
+          "name": "getrockneter Oregano",
+          "quantity": 0.25,
+          "measure": "EL"
+        },
+        {
+          "name": "Salz",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Zucker",
+          "quantity": 0.25,
+          "measure": "Prise"
+        },
+        {
+          "name": "Pfeffer",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Edelsüß-Paprika",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Oregano",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Tomaten",
+          "quantity": 220,
+          "measure": "ml (Dose)"
+        },
+        {
+          "name": "Gemüsebrühe",
+          "quantity": 37.5,
+          "measure": "ml"
+        },
+        {
+          "name": "Tomatenmark",
+          "quantity": 0.25,
+          "measure": "EL"
+        },
+        {
+          "name": "geriebener Parmesankäse",
+          "quantity": 12.5,
+          "measure": "g"
+        },
+        {
+          "name": "Spaghetti",
+          "quantity": 100,
+          "measure": "g"
+        }
+      ]
+    }
+  ]
+}
