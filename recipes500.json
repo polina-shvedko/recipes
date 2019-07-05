@@ -156,6 +156,143 @@
           "measure": "g"
         }
       ]
+    },
+    {
+      "name": "Hummuspasta mit Gemüse Booster",
+      "calories": 500,
+      "weight": 274,
+      "relative calories": 182,
+      "process": "<dl class=\"list list--preparation\">\n    <dt>1.</dt>\n    <dd>\n        Nüsse hacken und in einer Pfanne ohne Fett rösten. Mit Ahornsirup &shy;beträufeln und leicht karamellisieren. Mit 1⁄2–1 TL Chiliflocken würzen. Nussmix abkühlen lassen.\n    </dd>\n    <dt>2.</dt>\n    <dd>\n        2–3 l Salzwasser (1 TL Salz pro Liter) aufkochen. Inzwischen Kohlrabi und Möhren schälen, waschen und mit einem Spiralschneider zu „Spaghetti“ (oder in dünne Stifte) schneiden. Nudeln im kochenden Salzwasser nach Packungsanweisung garen. Gemüsespaghetti die letzten ca. 2&nbsp;Minuten mitgaren.\n    </dd>\n    <dt>3.</dt>\n    <dd>\n        Inzwischen Spinat verlesen, waschen und abtropfen lassen. Knoblauch schälen und fein hacken. Öl in einer großen Pfanne erhitzen. Knoblauch darin anbraten. Nudeln abgießen, Garwasser dabei auffangen.\n    </dd>\n    <dt>4.</dt>\n    <dd>\n        Hummus und ca. 200 ml Nudelgarwasser zum Knoblauch geben, bei schwacher Hitze unter gelegentlichem Rühren erhitzen. Nudeln und Spinat zur Soße geben und mischen. Mit Salz und Pfeffer würzen. Mit dem Nuss-Chili-Mix bestreuen.\n    </dd>\n</dl>",
+      "photoId": 9,
+      "time": 30,
+      "indredients": [
+        {
+          "name": "Walnusskerne",
+          "quantity": 19,
+          "measure": "g"
+        },
+        {
+          "name": "Ahornsirup",
+          "quantity": 0.25,
+          "measure": "EL"
+        },
+        {
+          "name": "Chiliflocken",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Salz",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Pfeffer",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Kohlrabi",
+          "quantity": 0.5,
+          "measure": "Stück"
+        },
+        {
+          "name": "Möhren",
+          "quantity": 75,
+          "measure": "g"
+        },
+        {
+          "name": "lange Nudeln (z. B. Bavette)",
+          "quantity": 50,
+          "measure": "g"
+        },
+        {
+          "name": "junger Blattspinat",
+          "quantity": 25,
+          "measure": "g"
+        },
+        {
+          "name": "Knoblauchzehe",
+          "quantity": 0.25,
+          "measure": "Stück"
+        },
+        {
+          "name": "Öl",
+          "quantity": 0.25,
+          "measure": "EL"
+        },
+        {
+          "name": "Hummus (Kühlregal)",
+          "quantity": 45,
+          "measure": "g"
+        }
+      ]
+    },
+    {
+      "name": "\"Leicht & Locker\"-Saltimbocca",
+      "calories": 500,
+      "weight": 648,
+      "relative calories": 78,
+      "process": "<dl class=\"list list--preparation\">\n    <dt>1.</dt>\n    <dd>\n        Nüsse hacken und in einer Pfanne ohne Fett rösten. Mit Ahornsirup &shy;beträufeln und leicht karamellisieren. Mit 1⁄2–1 TL Chiliflocken würzen. Nussmix abkühlen lassen.\n    </dd>\n    <dt>2.</dt>\n    <dd>\n        2–3 l Salzwasser (1 TL Salz pro Liter) aufkochen. Inzwischen Kohlrabi und Möhren schälen, waschen und mit einem Spiralschneider zu „Spaghetti“ (oder in dünne Stifte) schneiden. Nudeln im kochenden Salzwasser nach Packungsanweisung garen. Gemüsespaghetti die letzten ca. 2&nbsp;Minuten mitgaren.\n    </dd>\n    <dt>3.</dt>\n    <dd>\n        Inzwischen Spinat verlesen, waschen und abtropfen lassen. Knoblauch schälen und fein hacken. Öl in einer großen Pfanne erhitzen. Knoblauch darin anbraten. Nudeln abgießen, Garwasser dabei auffangen.\n    </dd>\n    <dt>4.</dt>\n    <dd>\n        Hummus und ca. 200 ml Nudelgarwasser zum Knoblauch geben, bei schwacher Hitze unter gelegentlichem Rühren erhitzen. Nudeln und Spinat zur Soße geben und mischen. Mit Salz und Pfeffer würzen. Mit dem Nuss-Chili-Mix bestreuen.\n    </dd>\n</dl>",
+      "photoId": 10,
+      "time": 25,
+      "indredients": [
+        {
+          "name": "Gemüsebrühe (instant)",
+          "quantity": 0.25,
+          "measure": "TL"
+        },
+        {
+          "name": "Reis",
+          "quantity": 62.5,
+          "measure": "g"
+        },
+        {
+          "name": "TK-Erbsen-und-Möhrchen",
+          "quantity": 62.5,
+          "measure": "g"
+        },
+        {
+          "name": "Salz",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Pfeffer",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Schweineschnitzel",
+          "quantity": 160,
+          "measure": "g"
+        },
+        {
+          "name": "Parmaschinken",
+          "quantity": 2,
+          "measure": "Stück"
+        },
+        {
+          "name": "Öl",
+          "quantity": 0.5,
+          "measure": "EL"
+        },
+        {
+          "name": "Petersilie",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Butter",
+          "quantity": 5,
+          "measure": "g"
+        },
+        {
+          "name": "Holzspießchen",
+          "quantity": 2,
+          "measure": "Stück"
+        }
+      ]
     }
   ]
 }

@@ -171,6 +171,77 @@
           "measure": "TL"
         }
       ]
+    },
+    {
+      "name": "Rahmfilet mit Sommergemüse",
+      "calories": 610,
+      "weight": 950,
+      "relative calories": 64,
+      "process": "<dl class=\"list list--preparation\">\n    <dt>1.</dt>\n    <dd>\n        Ofen vorheizen (E-Herd: 220&thinsp;°C/Umluft: 200&thinsp;°C/Gas: s. Hersteller). Ein Backblech mit Backpapier auslegen. Für die Kartoffeln Kartoffeln gründlich waschen, mit Schale in 3–4 mm dicke Scheiben schneiden. Kartoffeln und 3&nbsp;EL Öl mischen, mit Salz und Pfeffer würzen. Eventuell portionsweise in einer Grillpfanne kurz anbraten. Dann (oder direkt) auf das Blech geben und im heißen Ofen ca. 25&nbsp;Minuten backen.\n    </dd>\n    <dt>2.</dt>\n    <dd>\n        Für den Lachs inzwischen Filet abspülen trocken tupfen und in 4&nbsp;Tranchen schneiden. Knoblauch schälen und sehr fein hacken. Mit Sojasoße und Honig verrühren und den Fisch damit einstreichen. Fisch zu den Kartoffeln auf das Backblech geben und die letzten ca. 7 Minuten mitgaren.\n    </dd>\n    <dt>3.</dt>\n    <dd>\n        Für die Salsa Radieschen putzen, waschen und fein würfeln. Kräuter waschen und trocken schütteln, die Blättchen abzupfen und fein hacken. Radieschen, Kräuter, Zitronensaft und 4&nbsp;EL Öl mischen, mit Salz und Pfeffer abschmecken. Kartoffeln und Lachs\n        <span class=\"vm-hook-outer vm-hook-default\"><span class=\"vm-hook\" style=\"color: rgb(0, 153, 0); border-color: transparent transparent rgb(0, 153, 0); cursor: pointer;\">anrichten</span><span class=\"vm-hook-icon\" style=\"display: inline-block;\"></span></span>. Radieschensalsa dazu reichen.\n    </dd>\n</dl>",
+      "photoId": 7,
+      "time": 40,
+      "indredients": [
+        {
+          "name": "größere festkochende Kartoffeln",
+          "quantity": 200,
+          "measure": "g"
+        },
+        {
+          "name": "Lachsfilet (ohne Haut) ",
+          "quantity": 200,
+          "measure": "g"
+        },
+        {
+          "name": "Radieschen",
+          "quantity": 0.25,
+          "measure": "Bund"
+        },
+        {
+          "name": "Petersilie",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Basilikum",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Olivenöl",
+          "quantity": 35,
+          "measure": "ml"
+        },
+        {
+          "name": "Salz",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Pfeffer",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Knoblauchzehe",
+          "quantity": 0.25,
+          "measure": "Stück"
+        },
+        {
+          "name": "Sojasoße",
+          "quantity": 15,
+          "measure": "ml"
+        },
+        {
+          "name": "flüssiger Honig",
+          "quantity": 10,
+          "measure": "ml"
+        },
+        {
+          "name": "Zitronensaft",
+          "quantity": 10,
+          "measure": "ml"
+        }
+      ]
     }
   ]
 }
