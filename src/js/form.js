@@ -149,10 +149,39 @@ prepareFormData = function (formElements) {
     return data;
 };
 
+/**
+ * Get content from recipes files
+ */
+loadGerichten = function (key) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            let recipe = JSON.parse(this.responseText);
+            switch (key) {
+                case 300:
+                    recipes300 = recipe;
+                    break;
+                case 500:
+                    recipes500 = recipe;
+                    break;
+                default:
+                    recipes800 = recipe;
+                    break;
+            }
+        }
+    };
+    xhttp.open("GET", "recipes" + key + ".json", false);
+    xhttp.send();
+};
+
 if (menuCalculate) {
     menuCalculate.addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
+
+        loadGerichten(300);
+        loadGerichten(500);
+        loadGerichten(800);
 
         return false;
     });
