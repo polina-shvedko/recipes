@@ -12,13 +12,24 @@ const AKTIVITAT_MITTLERE = '3';
 const AKTIVITAT_SEHR_AKTIVE = '4';
 const AKTIVITAT_SPORTLER = '5';
 
+const FRUESTUEK_PROZENT = 30;
+const MITTAGESSEN_PROZENT = 50;
+const ABENDESSEN_PROZENT = 20;
+
 if (formElement) {
+    formElement.addEventListener('reset', function (event) {
+        let ergebnis = document.getElementsByClassName('ergebnis-container')[0];
+
+        if(ergebnis){
+            ergebnis.style.display = 'none';
+        }
+    });
+
     formElement.addEventListener('submit', function (event) {
         event.preventDefault();
         event.stopPropagation();
         let formValid = validateForm(formElement);
         let formData = prepareFormData(event.target.elements);
-        let kalories = 0;
 
         if (formValid) {
             kalories = calculateCalories(formData);
@@ -174,6 +185,17 @@ loadGerichten = function (key) {
     xhttp.send();
 };
 
+/**
+ * Generates menu table
+ */
+generateMenu = function() {
+    fruestuckKalorien = Math.floor(kalories * FRUESTUEK_PROZENT / 100);
+    mittagessenKalorien = Math.floor(kalories * MITTAGESSEN_PROZENT / 100);
+    abendessenKalorien = Math.floor(kalories * ABENDESSEN_PROZENT / 100);
+
+
+};
+
 if (menuCalculate) {
     menuCalculate.addEventListener('click', function (event) {
         event.preventDefault();
@@ -182,6 +204,8 @@ if (menuCalculate) {
         loadGerichten(300);
         loadGerichten(500);
         loadGerichten(800);
+
+        generateMenu();
 
         return false;
     });
