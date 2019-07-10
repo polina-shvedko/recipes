@@ -193,7 +193,22 @@ generateMenu = function() {
     mittagessenKalorien = Math.floor(kalories * MITTAGESSEN_PROZENT / 100);
     abendessenKalorien = Math.floor(kalories * ABENDESSEN_PROZENT / 100);
 
+    let ergebnisContainer = document.getElementsByClassName('ergebnis-container')[0];
 
+    if(ergebnisContainer){
+        let tage = ergebnisContainer.querySelectorAll('.tage');
+        let nummerTage = 3;
+
+        if(tage){
+            tage.forEach(function (elem) {
+                if(elem.checked){
+                    nummerTage = elem.value
+                }
+            });
+        }
+
+        console.log(nummerTage);
+    }
 };
 
 if (menuCalculate) {
