@@ -35,3 +35,7 @@ h1{
     transform: translate(-50%,-50%);
 }
 
+.top-headline{
+    background-color: #fff3cd;
+    color: #007bff;
+}

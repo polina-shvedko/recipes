@@ -24,18 +24,18 @@ if (formElement) {
             kalories = calculateCalories(formData);
         }
 
-        let ergebnissKalorien = document.querySelector('.modal-body') || null;
+        let ergebnissKalorien = document.querySelector('.ergebnis-container') || null;
 
         if (ergebnissKalorien !== null) {
+            let name = formData['vorname'];
+
             if (kalories < 1200) {
-                ergebnissKalorien.innerHTML = 'Sie sollen mindestens 1200 Kalorien pro Tag essen! Aber villeicht haben Sie etwas falsch eingegeben.'
+                ergebnissKalorien.getElementsByClassName('result-text')[0].innerHTML = name + ', Sie sollen mindestens <strong>1200</strong> Kalorien pro Tag essen! Aber villeicht haben Sie etwas falsch eingegeben.'
             } else {
-                ergebnissKalorien.innerHTML = 'Sie sollen maximal ' + kalories + ' Kalorien pro Tag essen!'
+                ergebnissKalorien.getElementsByClassName('result-text')[0].innerHTML = name + ', Sie sollen maximal <strong>' + kalories + '</strong> Kalorien pro Tag essen!'
             }
 
-            openModal();
-            showLightbox();
-
+            ergebnissKalorien.style.display = 'block';
         }
 
         return false;
@@ -61,7 +61,7 @@ getAktivitaet = function (aktivitaet) {
         case AKTIVITAT_MASSIGE:
             return 1.375;
         case AKTIVITAT_MITTLERE:
-                return 1.55;
+            return 1.55;
         case AKTIVITAT_SEHR_AKTIVE:
             return 1.725;
         case AKTIVITAT_SPORTLER:
@@ -83,9 +83,10 @@ calculateCalories = function (formData) {
     let alter = formData['alter'] || 0;
     let grosse = formData['grosse'] || 0;
     let aktivitaet = formData['aktivitaet'] || 0;
+    let ergebnis = parseInt(formData['ergebnis']) || 0;
 
-    if(geschlecht !== null){
-        if(geschlecht === WEIBLICH_GESCHLECHT){
+    if (geschlecht !== null) {
+        if (geschlecht === WEIBLICH_GESCHLECHT) {
             a = 447.593;
             b = 9.247;
             c = 3.098;
@@ -97,7 +98,17 @@ calculateCalories = function (formData) {
             d = 5.677;
         }
 
-        bmr = a + b * gewicht + c * grosse - d * alter;
+        let koeff = 1;
+        switch (ergebnis) {
+            case ERGEBNIS_ZUNEHMEN:
+                koeff = 1.2;
+                break;
+            case ERGEBNIS_ABNEHMEN:
+                koeff = 0.8;
+                break;
+        }
+
+        bmr = (a + b * gewicht + c * grosse - d * alter) * koeff;
         amr = getAktivitaet(aktivitaet);
 
         res = Math.round(bmr * amr);
@@ -118,15 +129,15 @@ prepareFormData = function (formElements) {
         let dataName, dataValue;
 
         for (let i = 0; i < formElements.length; i++) {
-            if(formElements[i].hasAttribute('name')){
-                if(formElements[i].hasAttribute('type') && formElements[i].getAttribute('type') === 'radio'
-                    && formElements[i].hasAttribute('checked') && formElements[i].getAttribute('checked') === 'checked'){
+            if (formElements[i].hasAttribute('name')) {
+                if (formElements[i].hasAttribute('type') && formElements[i].getAttribute('type') === 'radio'
+                    && formElements[i].checked) {
                     dataName = formElements[i].getAttribute('name');
                     dataValue = formElements[i].value;
-                } else if(formElements[i].hasAttribute('type') && formElements[i].getAttribute('type') !== 'radio' && formElements[i].tagName !== 'select'){
+                } else if (formElements[i].hasAttribute('type') && formElements[i].getAttribute('type') !== 'radio' && formElements[i].tagName !== 'select') {
                     dataName = formElements[i].getAttribute('name');
                     dataValue = formElements[i].value;
-                } else if (formElements[i].tagName.toLocaleLowerCase() === 'select'){
+                } else if (formElements[i].tagName.toLocaleLowerCase() === 'select') {
                     dataValue = formElements[i].options[formElements[i].selectedIndex].value;
                     dataName = formElements[i].getAttribute('name');
                 }
@@ -137,3 +148,13 @@ prepareFormData = function (formElements) {
 
     return data;
 };
+
+if (menuCalculate) {
+    menuCalculate.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        return false;
+    });
+}
+
