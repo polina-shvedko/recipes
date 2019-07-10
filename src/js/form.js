@@ -16,11 +16,15 @@ const FRUESTUEK_PROZENT = 30;
 const MITTAGESSEN_PROZENT = 50;
 const ABENDESSEN_PROZENT = 20;
 
+const MENU_300 = 300;
+const MENU_500 = 500;
+const MENU_800 = 800;
+
 if (formElement) {
     formElement.addEventListener('reset', function (event) {
         let ergebnis = document.getElementsByClassName('ergebnis-container')[0];
 
-        if(ergebnis){
+        if (ergebnis) {
             ergebnis.style.display = 'none';
         }
     });
@@ -188,27 +192,102 @@ loadGerichten = function (key) {
 /**
  * Generates menu table
  */
-generateMenu = function() {
+generateMenu = function () {
     fruestuckKalorien = Math.floor(kalories * FRUESTUEK_PROZENT / 100);
     mittagessenKalorien = Math.floor(kalories * MITTAGESSEN_PROZENT / 100);
     abendessenKalorien = Math.floor(kalories * ABENDESSEN_PROZENT / 100);
 
     let ergebnisContainer = document.getElementsByClassName('ergebnis-container')[0];
 
-    if(ergebnisContainer){
+    if (ergebnisContainer) {
         let tage = ergebnisContainer.querySelectorAll('.tage');
         let nummerTage = 3;
 
-        if(tage){
+        if (tage) {
             tage.forEach(function (elem) {
-                if(elem.checked){
+                if (elem.checked) {
                     nummerTage = elem.value
                 }
             });
         }
+        let menuObject = getMenuObject(nummerTage);
 
-        console.log(nummerTage);
+        let html = generateHtmlForMenu(menuObject);
     }
+};
+
+/**
+ *
+ * @param nummerTage
+ */
+getMenuObject = function (nummerTage) {
+    let res = [];
+
+    for (let i = 1; i <= nummerTage; i++) {
+        let tmpTag = [];
+        let tmpRes = [];
+        for (let j = 1; j <= 3; j++) {
+            let randomDataNummer = Math.floor(getRandomNummer(3, 8) * 100);
+            let recipeObject = getRecipeObject(randomDataNummer);
+            let nummerVonGerichte = recipeObject.dishes.length - 1;
+            let gerichteNummer = getRandomNummer(1, nummerVonGerichte);
+
+            tmpTag[j] = recipeObject.dishes[gerichteNummer];
+        }
+
+        tmpRes['fruestueck'] = tmpTag[1];
+        tmpRes['mittag'] = tmpTag[2];
+        tmpRes['abend'] = tmpTag[3];
+
+        res.push(tmpRes);
+    }
+
+    return res;
+};
+
+/**
+ *
+ * @param menuObject
+ * @returns {string}
+ */
+generateHtmlForMenu = function (menuObject) {
+    let res = '';
+
+    return res;
+};
+
+/**
+ *
+ * @param randomDataNummer
+ */
+getRecipeObject = function (randomDataNummer) {
+    let recipeObject = recipes300;
+
+    switch (randomDataNummer) {
+        case MENU_300:
+            recipeObject = recipes300;
+            break;
+        case MENU_500:
+            recipeObject = recipes500;
+            break;
+        case MENU_800:
+            recipeObject = recipes800;
+            break;
+    }
+
+    return recipeObject;
+};
+
+/**
+ *
+ * @param min
+ * @param max
+ * @returns {*}
+ */
+getRandomNummer = function (min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 if (menuCalculate) {
