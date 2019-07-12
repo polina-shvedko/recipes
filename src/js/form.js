@@ -223,7 +223,7 @@ generateMenu = function () {
             tableMenu.style.display = 'block';
             let ergebnis = tableMenu.getElementsByClassName('result-text')[0];
             if(ergebnis){
-                ergebnis.parentNode.insertBefore(htmlElement, ergebnis);
+                ergebnis.innerHTML = htmlElement.outerHTML;
             }
         }
     }
