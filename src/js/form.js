@@ -23,9 +23,11 @@ const MENU_800 = 800;
 if (formElement) {
     formElement.addEventListener('reset', function (event) {
         let ergebnis = document.getElementsByClassName('ergebnis-container')[0];
+        let speiseplanAbgrage = document.getElementsByClassName('speiseplan-anfrage')[0];
 
         if (ergebnis) {
             ergebnis.style.display = 'none';
+            speiseplanAbgrage.style.display = 'none';
         }
     });
 
@@ -40,6 +42,7 @@ if (formElement) {
         }
 
         let ergebnissKalorien = document.querySelector('.ergebnis-container') || null;
+        let speiseplanAbgrage = document.querySelector('.speiseplan-anfrage') || null;
 
         if (ergebnissKalorien !== null) {
             let name = formData['vorname'];
@@ -51,6 +54,7 @@ if (formElement) {
             }
 
             ergebnissKalorien.style.display = 'block';
+            speiseplanAbgrage.style.display = 'block';
         }
 
         return false;
@@ -212,14 +216,14 @@ generateMenu = function () {
         }
         let menuObject = getMenuObject(nummerTage);
 
-        let html = generateHtmlForMenu(menuObject);
+        let htmlElement = generateHtmlForMenu(menuObject);
         let tableMenu = document.getElementsByClassName('menu-container')[0];
 
         if(tableMenu){
             tableMenu.style.display = 'block';
             let ergebnis = tableMenu.getElementsByClassName('result-text')[0];
             if(ergebnis){
-                ergebnis.innerHTML = html;
+                ergebnis.parentNode.insertBefore(htmlElement, ergebnis);
             }
         }
     }
@@ -250,17 +254,6 @@ getMenuObject = function (nummerTage) {
 
         res.push(tmpRes);
     }
-
-    return res;
-};
-
-/**
- *
- * @param menuObject
- * @returns {string}
- */
-generateHtmlForMenu = function (menuObject) {
-    let res = '<div class="row table"><div class="col-12">Test!!</div></div>';
 
     return res;
 };
