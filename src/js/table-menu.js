@@ -5,7 +5,7 @@
  */
 window.createImg = function(photoId) {
     let image = document.createElement('img');
-    image.setAttribute('src', '/img/image' + photoId + '.jpg');
+    image.setAttribute('src', './img/image' + photoId + '.jpg');
     image.classList.add('img-fluid');
     return image;
 };

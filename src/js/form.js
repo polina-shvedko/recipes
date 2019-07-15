@@ -189,7 +189,7 @@ loadGerichten = function (key) {
             }
         }
     };
-    xhttp.open("GET", "recipes" + key + ".json", false);
+    xhttp.open("GET", "./recipes" + key + ".json", false);
     xhttp.send();
 };
 
@@ -297,9 +297,9 @@ if (menuCalculate) {
         event.preventDefault();
         event.stopPropagation();
 
-        loadGerichten(300);
-        loadGerichten(500);
-        loadGerichten(800);
+        // loadGerichten(300);
+        // loadGerichten(500);
+        // loadGerichten(800);
 
         generateMenu();
 

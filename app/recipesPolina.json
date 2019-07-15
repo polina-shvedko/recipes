@@ -1,0 +1,66 @@
+{
+  "dishes": [
+    {
+      "name": "Tomaten-Mozzarella-Salat",
+      "calories": 210,
+      "weight": 120,
+      "relative_calories": 175,
+      "process": "<dl class=\"list list--preparation\"><dt>1.</dt>\n    <dd>\n        Tomaten putzen, waschen und in Scheiben schneiden. Mozzarella auf einem Sieb abtropfen lassen. Basilikum waschen und die Blätter von den Stielen zupfen. Knoblauch- und Balsam-Essig verrühren.\n    </dd>\n    <dt>2.</dt>\n    <dd>\n        Öl darunter schlagen. Mit Salz, Pfeffer und Zucker würzen. Tomatenscheiben, Mozzarella, Basilikumblätter und Oliven auf Tellern <span class=\"vm-hook-outer vm-hook-default\"><span class=\"vm-hook\" style=\"color: rgb(0, 153, 0); border-color: transparent transparent rgb(0, 153, 0); cursor: pointer;\">anrichten</span><span class=\"vm-hook-icon\" style=\"display: inline-block;\"></span></span>. Vinaigrette darüber verteilen. Mit Pfeffer bestreuen.\n    </dd>\n</dl>",
+      "photoId": 3,
+      "time": 20,
+      "indredients": [
+        {
+          "name": "Tomaten",
+          "quantity": 1,
+          "measure": "Stück"
+        },
+        {
+          "name": "Mozzarella-Kugeln",
+          "quantity": 30,
+          "measure": "g"
+        },
+        {
+          "name": "Basilikum ",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Knoblauch-Essig",
+          "quantity": 0.75,
+          "measure": "EL"
+        },
+        {
+          "name": "Balsam-Essig",
+          "quantity": 0.5,
+          "measure": "EL"
+        },
+        {
+          "name": "Olivenöl",
+          "quantity": 1,
+          "measure": "EL"
+        },
+        {
+          "name": "schwarze Oliven ",
+          "quantity": 25,
+          "measure": "g"
+        },
+        {
+          "name": "Salz",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Pfeffer",
+          "quantity": "n/a",
+          "measure": ""
+        },
+        {
+          "name": "Zucker",
+          "quantity": "n/a",
+          "measure": ""
+        }
+      ]
+    },
+    {}
+  ]
+}
