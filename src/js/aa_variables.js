@@ -67,3 +67,21 @@ let usedNumbers = [];
  *
  */
 let menuItems;
+
+/**
+ *
+ * @type {HTMLElement}
+ */
+let listGenerate = document.getElementById('list-generation');
+
+/**
+ *
+ * @type {HTMLElement}
+ */
+let menuPrint = document.getElementById('menu-print');
+
+/**
+ *
+ * @type {Array}
+ */
+let menuObject = [];

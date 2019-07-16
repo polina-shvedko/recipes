@@ -3,7 +3,7 @@
  * @param photoId
  * @returns {HTMLElement}
  */
-window.createImg = function(photoId) {
+window.createImg = function (photoId) {
     let image = document.createElement('img');
     image.setAttribute('src', './img/image' + photoId + '.jpg');
     image.classList.add('img-fluid');
@@ -15,7 +15,7 @@ window.createImg = function(photoId) {
  * @returns {HTMLElement}
  * @param text
  */
-window.createHeadline = function(text) {
+window.createHeadline = function (text) {
     let headline = document.createElement('h4');
     headline.innerHTML = text;
     return headline;
@@ -26,7 +26,7 @@ window.createHeadline = function(text) {
  * @returns {HTMLElement}
  * @param text
  */
-window.createText = function(text) {
+window.createText = function (text) {
     let textTag = document.createElement('p');
     textTag.innerHTML = text;
     return textTag;
@@ -37,7 +37,7 @@ window.createText = function(text) {
  * @param object
  * @returns {HTMLElement}
  */
-window.createBeschreibung = function(object) {
+window.createBeschreibung = function (object) {
     let popover = document.createElement('div');
     let popoverHeader = document.createElement('h3');
     let popoverBody = document.createElement('div');
@@ -69,15 +69,15 @@ window.createBeschreibung = function(object) {
 
     ingredientsHtml += zutatenElement.outerHTML;
 
-    if(ingredients.length > 0){
-        for(let i = 0; i < ingredients.length; i++){
+    if (ingredients.length > 0) {
+        for (let i = 0; i < ingredients.length; i++) {
             let measure = '';
-            if(ingredients[i].measure !== 'n/a'){
+            if (ingredients[i].measure !== 'n/a') {
                 measure = ingredients[i].measure;
             }
 
             let quantity = '';
-            if(ingredients[i].quantity !== 'n/a'){
+            if (ingredients[i].quantity !== 'n/a') {
                 quantity = ingredients[i].quantity;
             }
             ingredientsHtml += createText(quantity + " " + measure + " " + ingredients[i].name).outerHTML;
@@ -146,7 +146,7 @@ window.generateHtmlForMenu = function (menuObject) {
 
         let trBody;
         for (let i = 0; i < menuObject.length; i++) {
-            let tag = i+1;
+            let tag = i + 1;
 
             trBody = document.createElement('tr');
 
@@ -219,7 +219,7 @@ window.showBeschreibung = function (event) {
 
     let popover = element.querySelector('.popover');
 
-    if(popover){
+    if (popover) {
         popover.classList.add('show');
     }
 
@@ -235,7 +235,7 @@ window.hideBeschreibung = function (event) {
 
     let popover = element.querySelector('.popover');
 
-    if(popover){
+    if (popover) {
         popover.classList.remove('show');
     }
 
@@ -245,13 +245,86 @@ window.hideBeschreibung = function (event) {
 /**
  *
  */
-window.addEventListenrsForMenus = function(){
+window.addEventListenrsForMenus = function () {
     let menuItems = document.querySelectorAll('.menu-item');
 
-    if(menuItems){
+    if (menuItems) {
         menuItems.forEach(function (element) {
             element.addEventListener('mouseover', showBeschreibung);
             element.addEventListener('mouseleave', hideBeschreibung);
         })
     }
+};
+
+if (menuPrint) {
+    menuPrint.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        window.print();
+
+        return false;
+    });
+}
+
+if (listGenerate) {
+    listGenerate.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (menuObject && menuObject.length > 0) {
+            let fruestuek = [];
+            let mittag = [];
+            let abend = [];
+
+            for (let i = 0; i < menuObject.length; i++) {
+                fruestuek.push(menuObject[i].fruestueck);
+                mittag.push(menuObject[i].mittag);
+                abend.push(menuObject[i].abend);
+            }
+
+            let listOfProducts = [];
+
+            let tmpList;
+            tmpList = fruestuek.concat(mittag);
+            tmpList = tmpList.concat(abend);
+
+            listOfProducts.push(getListOfProducts(tmpList));
+
+            if (listOfProducts.length > 0) {
+
+            }
+        }
+        return false;
+    });
+}
+
+/**
+ *
+ * @param object
+ * @returns {Array}
+ */
+window.getListOfProducts = function (object) {
+    let listOfProducts = [];
+    if (object.length > 0) {
+        for (let i = 0; i < object.length; i++) {
+            if(object[i].ingredients && object[i].ingredients.length > 0){
+                let ingredients = object[i].ingredients;
+                for (let j = 0; j < ingredients.length; j++) {
+
+                    if(ingredients[j]['name'] in listOfProducts){
+                        listOfProducts[ingredients[j]['name']] = {
+                            'quantity' : parseInt(ingredients[j]['quantity']) + parseInt(listOfProducts[ingredients[j]['name']]['quantity']),
+                            'measure' : ingredients[j]['measure']
+                        };
+                    } else {
+                        listOfProducts[ingredients[j]['name']] = {
+                            'quantity' :  parseInt(ingredients[j]['quantity']),
+                            'measure' : ingredients[j]['measure']
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+    return listOfProducts;
 };

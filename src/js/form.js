@@ -366,6 +366,8 @@ getMenuObject = function (nummerTage) {
         res.push(tmpRes);
     }
 
+    menuObject = res;
+
     return res;
 };
 
