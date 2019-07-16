@@ -330,6 +330,7 @@ generateMenu = function () {
             let ergebnis = tableMenu.getElementsByClassName('result-text')[0];
             if(ergebnis){
                 ergebnis.innerHTML = htmlElement.outerHTML;
+                ergebnis.scrollIntoView({block: "start", behavior: "smooth"});
                 addEventListenrsForMenus();
             }
         }

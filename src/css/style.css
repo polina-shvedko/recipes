@@ -102,3 +102,9 @@ p{
 .list--preparation dd{
     margin-left: 1.25rem;
 }
+
+.popover-headline{
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center!important;
+}

@@ -41,6 +41,9 @@ window.createBeschreibung = function(object) {
     let popover = document.createElement('div');
     let popoverHeader = document.createElement('h3');
     let popoverBody = document.createElement('div');
+    let ingredientElement = document.createElement('div');
+    let ingredients = object.ingredients;
+    let ingredientsHtml = '';
     let image = createImg(object.photoId);
 
     popover.classList.add("popover");
@@ -56,7 +59,37 @@ window.createBeschreibung = function(object) {
 
     popoverHeader.innerText = object.name;
 
-    popoverBody.innerHTML = image.outerHTML + object.process;
+    ingredientElement.classList.add('mt-3');
+    ingredientElement.classList.add('mb-3');
+    ingredientElement.classList.add('ingredients');
+    ingredientElement.classList.add('text-right');
+
+    let zutatenElement = createText("Zutaten");
+    zutatenElement.classList.add('popover-headline');
+
+    ingredientsHtml += zutatenElement.outerHTML;
+
+    if(ingredients.length > 0){
+        for(let i = 0; i < ingredients.length; i++){
+            let measure = '';
+            if(ingredients[i].measure !== 'n/a'){
+                measure = ingredients[i].measure;
+            }
+
+            let quantity = '';
+            if(ingredients[i].quantity !== 'n/a'){
+                quantity = ingredients[i].quantity;
+            }
+            ingredientsHtml += createText(quantity + " " + measure + " " + ingredients[i].name).outerHTML;
+        }
+    }
+
+    ingredientElement.innerHTML = ingredientsHtml;
+
+    let zubereitungElement = createText("Zubereitung");
+    zubereitungElement.classList.add('popover-headline');
+
+    popoverBody.innerHTML = image.outerHTML + ingredientElement.outerHTML + zubereitungElement.outerHTML + object.process;
 
     return popover;
 };
