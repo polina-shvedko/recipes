@@ -62,3 +62,8 @@ let recipes300, recipes500, recipes800;
  * @type {Array}
  */
 let usedNumbers = [];
+
+/**
+ *
+ */
+let menuItems;

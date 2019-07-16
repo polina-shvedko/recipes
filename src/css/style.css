@@ -76,8 +76,29 @@ p{
     background-color: #fff3cd;
 }
 
+.menu-item{
+    position: relative;
+}
+
 .menu-item:hover{
     cursor: pointer;
     box-shadow: 0 0 2rem rgba(0,0,0,.15);
     border-radius: 0.25rem;
+}
+
+.popover{
+    max-width: 100%!important;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.list--preparation{
+    margin-top: 1rem;
+}
+
+.list--preparation dt{
+    float: left;
+}
+.list--preparation dd{
+    margin-left: 1.25rem;
 }
