@@ -325,7 +325,8 @@ if (listGenerate) {
             if (listOfProducts) {
                 for (let name in listOfProducts) {
                     let quantity = listOfProducts[name]['quantity'] ? listOfProducts[name]['quantity'] : '';
-                    let element = createText(name + ": " + quantity + " " + listOfProducts[name]['measure']);
+                    let element = createText("<span class='mr-3 custom-control-input'></span>" + name + ": " + quantity + " " + listOfProducts[name]['measure']);
+                    element.classList.add('custom-control');
                     listWrapperCol.appendChild(element);
                 }
 
@@ -337,6 +338,7 @@ if (listGenerate) {
                     if(textContainer){
                         textContainer.innerHTML = listWrapper.outerHTML;
                         listErgebnis.style.display = 'block';
+                        listErgebnis.scrollIntoView({block: "start", behavior: "smooth"});
                     }
                 }
             }

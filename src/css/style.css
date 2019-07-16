@@ -108,3 +108,20 @@ p{
     font-weight: bold;
     text-align: center!important;
 }
+.custom-control{
+    position: relative;
+}
+.custom-control-input {
+    position: absolute;
+    top: .25rem;
+    left: -0.25rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    content: "";
+    background-color: #fff;
+    border: #adb5bd solid 1px;
+    border-radius: .25rem;
+    opacity: 1;
+}
