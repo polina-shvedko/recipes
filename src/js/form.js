@@ -447,23 +447,30 @@ if (menuCalculate) {
 
 /**
  *
- * @param gerichtObject
+ * @param gerichtObject - рецепт одного блюда берется из json
  * @param type
  * @returns {number}
  */
 window.getGerichteWeight = function (gerichtObject, type) {
     let weight = 0;
 
+    /**
+     * подсчет коефициента на каждый прием пищи
+     * кол-во каллорий на завтрак = дневная норма каллорий умноженная на процент необходимый для завтрака (30%)
+     */
     let frueschtuek = kalories * FRUESTUEK_PROZENT / 100;
     let mittag = kalories * MITTAGESSEN_PROZENT / 100;
     let abend = kalories * ABENDESSEN_PROZENT / 100;
 
+    //Кол-во каллорий на одну порцию
     let kaloriesProPorzionGramm = gerichtObject.calories;
 
+    //рассчитываем коэфициент для каждого приема пищи, для корректировки веса одной порции блюда
     let koefficientFruestuek = frueschtuek / kaloriesProPorzionGramm;
     let koefficientMittag = mittag / kaloriesProPorzionGramm;
     let koefficientAbend = abend / kaloriesProPorzionGramm;
 
+    //расчитывем вес одной порции блюда в зависимости от коэфициента веса и время приема пищи
     switch (type) {
         case FRUESTUEK_NAME:
             weight = Math.round(gerichtObject.weight * koefficientFruestuek);

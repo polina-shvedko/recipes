@@ -6,6 +6,7 @@
 window.createImg = function (photoId) {
     let image = document.createElement('img');
     image.setAttribute('src', './img/image' + photoId + '.jpg');
+    image.setAttribute('alt', 'image' + photoId);
     image.classList.add('img-fluid');
     return image;
 };
@@ -34,7 +35,7 @@ window.createText = function (text) {
 
 /**
  *
- * @param object
+ * @param object - рецепт одного блюда берется из json
  * @returns {HTMLElement}
  */
 window.createBeschreibung = function (object) {
@@ -48,7 +49,6 @@ window.createBeschreibung = function (object) {
 
     popover.classList.add("popover");
     popover.classList.add("fade");
-    popover.classList.add("bs-popover-left");
 
     popoverHeader.classList.add('popover-header');
 
@@ -89,6 +89,7 @@ window.createBeschreibung = function (object) {
     let zubereitungElement = createText("Zubereitung");
     zubereitungElement.classList.add('popover-headline');
 
+    //object.process - процесс в рецепте, уже заисанный в HTML
     popoverBody.innerHTML = image.outerHTML + ingredientElement.outerHTML + zubereitungElement.outerHTML + object.process;
 
     return popover;
@@ -164,8 +165,8 @@ window.generateHtmlForMenu = function (menuObject) {
             let headline3 = createHeadline(menuObject[i].abend.name);
 
             let weight1 = createText("<i class=\"fas fa-balance-scale\"></i> " + getGerichteWeight(menuObject[i].fruestueck, FRUESTUEK_NAME) + " g");
-            let weight2 = createText("<i class=\"fas fa-balance-scale\"></i> " + getGerichteWeight(menuObject[i].mittag, FRUESTUEK_NAME) + " g");
-            let weight3 = createText("<i class=\"fas fa-balance-scale\"></i> " + getGerichteWeight(menuObject[i].abend, FRUESTUEK_NAME) + " g");
+            let weight2 = createText("<i class=\"fas fa-balance-scale\"></i> " + getGerichteWeight(menuObject[i].mittag, MITTAGESSEN_NAME) + " g");
+            let weight3 = createText("<i class=\"fas fa-balance-scale\"></i> " + getGerichteWeight(menuObject[i].abend, ABENDESSEN_NAME) + " g");
 
             let kallorien1 = createText("<i class=\"fas fa-fire-alt\"></i> " + menuObject[i].fruestueck.relative_calories + " kcal pro 100 g");
             let kallorien2 = createText("<i class=\"fas fa-fire-alt\"></i> " + menuObject[i].mittag.relative_calories + " kcal pro 100 g");
