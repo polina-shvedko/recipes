@@ -35,6 +35,9 @@ window.hideLightbox = function () {
 };
 
 if (lightbox !== null) {
+    /**
+     *
+     */
     lightbox.addEventListener('click', function (event) {
        closeModal();
        hideLightbox();
@@ -43,6 +46,9 @@ if (lightbox !== null) {
 
 
 if (closeModalButton !== null) {
+    /**
+     *
+     */
     closeModalButton.addEventListener('click', function (event) {
         closeModal();
         hideLightbox();

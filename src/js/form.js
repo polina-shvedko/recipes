@@ -1,26 +1,105 @@
 let formErrors = [];
+
+/**
+ *
+ * @type {string}
+ */
 const WEIBLICH_GESCHLECHT = 'weiblich';
+
+/**
+ *
+ * @type {string}
+ */
 const MAENLICH_GESCHLECHT = 'maennlich';
 
+/**
+ *
+ * @type {number}
+ */
 const ERGEBNIS_ZUNEHMEN = 1;
+
+/**
+ *
+ * @type {number}
+ */
 const ERGEBNIS_ABNEHMEN = 2;
+
+/**
+ *
+ * @type {number}
+ */
 const ERGEBNIS_BLEIBEN = 3;
 
+/**
+ *
+ * @type {string}
+ */
 const AKTIVITAT_MANGEL = '1';
+
+/**
+ *
+ * @type {string}
+ */
 const AKTIVITAT_MASSIGE = '2';
+
+/**
+ *
+ * @type {string}
+ */
 const AKTIVITAT_MITTLERE = '3';
+
+/**
+ *
+ * @type {string}
+ */
 const AKTIVITAT_SEHR_AKTIVE = '4';
+
+/**
+ *
+ * @type {string}
+ */
 const AKTIVITAT_SPORTLER = '5';
 
+/**
+ *
+ * @type {number}
+ */
 const FRUESTUEK_PROZENT = 30;
+
+/**
+ *
+ * @type {number}
+ */
 const MITTAGESSEN_PROZENT = 50;
+
+/**
+ *
+ * @type {number}
+ */
 const ABENDESSEN_PROZENT = 20;
 
+/**
+ *
+ * @type {number}
+ */
 const MENU_300 = 300;
+
+/**
+ *
+ * @type {number}
+ */
 const MENU_500 = 500;
+
+/**
+ *
+ * @type {number}
+ */
 const MENU_800 = 800;
 
 if (formElement) {
+    /**
+     *
+     */
     formElement.addEventListener('reset', function (event) {
         let ergebnis = document.getElementsByClassName('ergebnis-container')[0];
         let speiseplanAbgrage = document.getElementsByClassName('speiseplan-anfrage')[0];
@@ -31,6 +110,9 @@ if (formElement) {
         }
     });
 
+    /**
+     *
+     */
     formElement.addEventListener('submit', function (event) {
         event.preventDefault();
         event.stopPropagation();
@@ -72,6 +154,11 @@ validateForm = function (form) {
     return res;
 };
 
+/**
+ *
+ * @param aktivitaet
+ * @returns {number}
+ */
 getAktivitaet = function (aktivitaet) {
 
     switch (aktivitaet) {
@@ -244,11 +331,12 @@ getMenuObject = function (nummerTage) {
             let randomDataNummer = Math.floor(getRandomNummer(3, 8) * 100);
             let recipeObject = getRecipeObject(randomDataNummer);
             let nummerVonGerichte = recipeObject.dishes.length - 1;
-            let gerichteNummer = getRandomNummer(1, nummerVonGerichte);
+            let gerichteNummer = getRandomGerichtNummer(1, nummerVonGerichte);
 
             tmpTag[j] = recipeObject.dishes[gerichteNummer];
         }
 
+        usedNumbers = [];
         tmpRes['fruestueck'] = tmpTag[1];
         tmpRes['mittag'] = tmpTag[2];
         tmpRes['abend'] = tmpTag[3];
@@ -293,7 +381,30 @@ getRandomNummer = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+/**
+ *
+ * @param min
+ * @param max
+ * @returns {*}
+ */
+getRandomGerichtNummer = function (min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    let nummer = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    if(usedNumbers.includes(nummer)){
+        nummer = getRandomGerichtNummer(min, max);
+    }
+
+    usedNumbers.push(nummer);
+
+    return nummer;
+};
+
 if (menuCalculate) {
+    /**
+     *
+     */
     menuCalculate.addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();

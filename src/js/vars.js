@@ -1,3 +1,7 @@
+/**
+ *
+ * @type {{dishes: *[]}}
+ */
 recipes300 = {
     "dishes": [
         {
@@ -548,6 +552,10 @@ recipes300 = {
     ]
 };
 
+/**
+ *
+ * @type {{dishes: *[]}}
+ */
 recipes500 = {
     "dishes": [
         {
@@ -1176,6 +1184,10 @@ recipes500 = {
     ]
 };
 
+/**
+ *
+ * @type {{dishes: *[]}}
+ */
 recipes800 = {
     "dishes": [
         {
