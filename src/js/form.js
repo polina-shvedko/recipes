@@ -122,11 +122,13 @@ if (formElement) {
         let ergebnis = document.getElementsByClassName('ergebnis-container')[0];
         let speiseplanAbgrage = document.getElementsByClassName('speiseplan-anfrage')[0];
         let speiseplan = document.getElementsByClassName('menu-container')[0];
+        let listErgebnis = document.querySelector('.list-of-products');
 
         if (ergebnis) {
             ergebnis.style.display = 'none';
             speiseplanAbgrage.style.display = 'none';
             speiseplan.style.display = 'none';
+            listErgebnis.style.display = 'none';
         }
     });
 

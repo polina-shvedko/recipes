@@ -3,6 +3,7 @@ form,
 .speiseplan-anfrage,
 #menu-calculate,
 #list-generation,
-.print-result{
+.print-result,
+#show-menu{
     display: none!important;
 }

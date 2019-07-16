@@ -82,6 +82,12 @@ let menuPrint = document.getElementById('menu-print');
 
 /**
  *
+ * @type {HTMLElement}
+ */
+let listePrint = document.getElementById('liste-print');
+
+/**
+ *
  * @type {Array}
  */
 let menuObject = [];
