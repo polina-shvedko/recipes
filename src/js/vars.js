@@ -924,7 +924,6 @@ recipes500 = {
                 }
             ]
         },
-
         {
             "name": "Betörende Linsensuppe 'Magischer Ingwer'",
             "calories": 250,
@@ -1018,7 +1017,6 @@ recipes500 = {
                 }
             ]
         },
-
         {
             "name": "Kohlrabi-Schnitzel mit Joghurt-Kräuterdip",
             "calories": 290,
@@ -1107,7 +1105,6 @@ recipes500 = {
                 }
             ]
         },
-
         {
             "name": "Blumenkohl-Curry mit Hähnchenbrust",
             "calories": 400,

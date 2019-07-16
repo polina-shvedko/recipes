@@ -97,9 +97,9 @@ window.generateHtmlForMenu = function (menuObject) {
             let image2 = createImg(menuObject[i].mittag.photoId);
             let image3 = createImg(menuObject[i].abend.photoId);
 
-            let headline1 = createHeadline(menuObject[i].fruestueck.name);
-            let headline2 = createHeadline(menuObject[i].mittag.name);
-            let headline3 = createHeadline(menuObject[i].abend.name);
+            let headline1 = createHeadline(menuObject[i].fruestueck.name + "(" + getGerichteWeight(menuObject[i].fruestueck, FRUESTUEK_NAME) + " gramm)");
+            let headline2 = createHeadline(menuObject[i].mittag.name + "(" + getGerichteWeight(menuObject[i].mittag, MITTAGESSEN_NAME) + " gramm)");
+            let headline3 = createHeadline(menuObject[i].abend.name + "(" + getGerichteWeight(menuObject[i].abend, ABENDESSEN_NAME) + " gramm)");
 
             let kallorien1 = createText("<i class=\"fas fa-fire-alt\"></i> " + menuObject[i].fruestueck.relative_calories + " kcal pro 100 g");
             let kallorien2 = createText("<i class=\"fas fa-fire-alt\"></i> " + menuObject[i].mittag.relative_calories + " kcal pro 100 g");

@@ -96,6 +96,24 @@ const MENU_500 = 500;
  */
 const MENU_800 = 800;
 
+/**
+ *
+ * @type {string}
+ */
+const FRUESTUEK_NAME = 'fruestuek';
+
+/**
+ *
+ * @type {string}
+ */
+const MITTAGESSEN_NAME = 'mittagessen';
+
+/**
+ *
+ * @type {string}
+ */
+const ABENDESSEN_NAME = 'abendessen';
+
 if (formElement) {
     /**
      *
@@ -418,4 +436,38 @@ if (menuCalculate) {
         return false;
     });
 }
+
+/**
+ *
+ * @param gerichtObject
+ * @param type
+ * @returns {number}
+ */
+window.getGerichteWeight = function (gerichtObject, type) {
+    let weight = 0;
+
+    let frueschtuek = kalories * FRUESTUEK_PROZENT / 100;
+    let mittag = kalories * MITTAGESSEN_PROZENT / 100;
+    let abend = kalories * ABENDESSEN_PROZENT / 100;
+
+    let kaloriesProPorzionGramm = gerichtObject.calories;
+
+    let koefficientFruestuek = frueschtuek / kaloriesProPorzionGramm;
+    let koefficientMittag = mittag / kaloriesProPorzionGramm;
+    let koefficientAbend = abend / kaloriesProPorzionGramm;
+
+    switch (type) {
+        case FRUESTUEK_NAME:
+            weight = Math.round(gerichtObject.weight * koefficientFruestuek);
+            break;
+        case ABENDESSEN_NAME:
+            weight = Math.round(gerichtObject.weight * koefficientAbend);
+            break;
+        case MITTAGESSEN_NAME:
+            weight = Math.round(gerichtObject.weight * koefficientMittag);
+            break;
+    }
+
+    return weight;
+};
 
