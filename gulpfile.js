@@ -15,7 +15,7 @@ let gulp = require('gulp'),
     save = require('gulp-save');
 
 //server start
-gulp.task('server', function () {
+gulp.task('server', () => {
     gulp.src('app')
         .pipe(server({
             livereload: true,
@@ -25,7 +25,7 @@ gulp.task('server', function () {
 });
 
 //images processing
-gulp.task('img', function () {
+gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
         .pipe(imagemin({
             interlaced: true,
@@ -40,14 +40,14 @@ gulp.task('img', function () {
         .pipe(gulp.dest('app/img'));
 });
 
-gulp.task('validateHtml', function () {
+gulp.task('validateHtml',  () => {
     gulp.src('app/*.html')
         .pipe(htmlValidator())
         .pipe(htmlValidator.reporter());
 });
 
 //css generation
-gulp.task('css', function () {
+gulp.task('css', () => {
     return gulp.src('src/css/**/*.css')
         .pipe(cleanCSS({compatibility: 'ie8', rebase: false}))
         .pipe(rename({suffix: '.min', prefix: ''}))
@@ -62,7 +62,7 @@ gulp.task('css', function () {
 });
 
 //js generation
-gulp.task('js', function () {
+gulp.task('js', () => {
     return gulp.src([
         'src/js/**/*.js'
     ])
@@ -75,7 +75,7 @@ gulp.task('js', function () {
 });
 
 //html generation from mustache
-gulp.task('html', function () {
+gulp.task('html', () => {
     return gulp.src(["src/templates/**/*.html", "src/templates/**/*.mustache"])
         .pipe(mustache('data.json',{},{}))
         .pipe(gulp.dest("app"))
@@ -83,7 +83,7 @@ gulp.task('html', function () {
 });
 
 //generates sitemap
-gulp.task('sitemap', function () {
+gulp.task('sitemap', () => {
     gulp.src('app/*.html', {
         read: false
     })
@@ -94,20 +94,23 @@ gulp.task('sitemap', function () {
 });
 
 //copy fonts
-gulp.task('fonts', function () {
+gulp.task('fonts', () => {
     gulp.src('src/css/webfonts/**/*.*')
     .pipe(gulp.dest('app/css/webfonts'));
 });
 
 //watch task
-gulp.task('watch', ['css', 'js', 'html'], function () {
+gulp.task('watch', gulp.series(gulp.parallel('css', 'js', 'html'), (done) => {
     livereload.listen();
-    gulp.watch(['src/css/*.css', 'src/js/*.js', 'src/templates/**/*.*'], ['css', 'js', 'html']);
-});
+    gulp.watch('src/css/*.css', gulp.parallel('css'));
+    gulp.watch('src/js/*.js', gulp.parallel('js'));
+    gulp.watch('src/templates/**/*.*', gulp.parallel('html'));
+    done();
+}));
 
 //validation of html
-gulp.task('validate-html', ['validateHtml']);
+gulp.task('validate-html', gulp.series('validateHtml'));
 
 
 //default task which is running simply from command line with gulp
-gulp.task('default', ['watch', 'server']);
+gulp.task('default', gulp.series('watch', 'server'));
